@@ -1,13 +1,28 @@
 import { NavLink } from "react-router";
 import MenuButton from "./MenuButton";
 
-function Header({ children }: { children: React.ReactNode }) {
+function Header({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+
+  className?: string;
+}) {
   return (
-    <div className="flex items-center justify-between px-6.5 pt-8 md:justify-start md:pt-15 md:pr-12 md:pl-10 lg:pt-20 xl:pr-29 xl:pl-28">
+    <div
+      className={`flex items-center justify-between md:justify-start ${className}`}
+    >
       <NavLink to={"/"}>
-        <MenuButton type="back" />
+        <MenuButton type={"back"} />
       </NavLink>
-      <p className="text-preset-6 transparent color-gradient-2 mx-auto bg-clip-text text-transparent uppercase md:text-[104px] md:tracking-[-1px] lg:text-[136px]">
+      <p
+        style={{
+          textShadow:
+            "0 0 6px #000, 0 0 10px #000, 0 0 14px #000, 0 0 18px #000",
+        }}
+        className="text-preset-6 mx-auto text-[#B3DAFF] md:text-[104px] md:tracking-[-1px] lg:text-[136px]"
+      >
         {children}
       </p>
     </div>

@@ -1,10 +1,11 @@
 import Header from "../../UI/Header";
+import PageContainer from "../../UI/PageContainer";
 
 function HowToPlay() {
   return (
-    <div className="pb-15.5 md:pb-24.5 lg:pb-42">
-      <Header>how to play</Header>
-      <div className="mt-20 flex flex-col gap-6 px-6.5 md:mt-25 md:pr-12 md:pl-10 lg:mt-16 lg:flex-row lg:gap-8 xl:px-28">
+    <PageContainer>
+      <Header>How to Play</Header>
+      <div className="mt-20 flex flex-col gap-6 lg:flex-row lg:gap-8">
         <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15">
           <p className="text-preset-4 hidden text-blue-600 md:block">01</p>
           <div className="flex items-center gap-4 md:flex-col md:items-start lg:items-center lg:gap-10 lg:text-center">
@@ -66,7 +67,7 @@ function HowToPlay() {
           </p>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 
