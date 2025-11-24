@@ -1,3 +1,5 @@
+import { useEffect, useCallback } from "react";
+
 function LetterInput({
   keyInput: keyInputState,
   setKeyInputState,
@@ -31,7 +33,7 @@ function LetterInput({
     >
   >;
 }) {
-  function handleClickOnKey() {
+  const handleClickOnKey = useCallback(() => {
     //// 1) IF WRONG GUESS PLAY WRONG SOUND ELSE PLAY CORRECT SOUND
     const wrongSound = new Audio("/sounds/wrong.mp3");
     const correctSound = new Audio("/sounds/correct.mp3");
@@ -41,10 +43,13 @@ function LetterInput({
       ) && keyInputState.active;
 
     if (wrong) {
-      // wrongSound.currentTime = 0;
+      wrongSound.currentTime = 0;
       wrongSound.play();
     } else {
-      correctSound.play();
+      if (keyInputState.active) {
+        correctSound.currentTime = 0;
+        correctSound.play();
+      }
     }
     //// 2) REVEAL LETTER
     setLetters((letters) =>
@@ -67,7 +72,26 @@ function LetterInput({
     if (wrong) {
       setCurrentHealth((prev) => prev - 1);
     }
-  }
+  }, [
+    letters,
+    keyInputState.key,
+    keyInputState.active,
+    setLetters,
+    setKeyInputState,
+    setCurrentHealth,
+  ]);
+
+  useEffect(() => {
+    function handler(e: KeyboardEvent) {
+      if (e.key.toUpperCase() === keyInputState.key) {
+        handleClickOnKey();
+      }
+    }
+
+    window.addEventListener("keydown", handler);
+
+    return () => window.removeEventListener("keydown", handler);
+  }, [handleClickOnKey, keyInputState.key]);
 
   return (
     <p

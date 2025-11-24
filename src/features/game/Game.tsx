@@ -57,6 +57,7 @@ function Game() {
       if (letter) return letter;
     }
   });
+
   useEffect(() => {
     if (letters?.every((letter) => letter.show)) {
       // eslint-disable-next-line react-hooks/set-state-in-effect

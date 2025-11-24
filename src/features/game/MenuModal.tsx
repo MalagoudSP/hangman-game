@@ -3,11 +3,21 @@ import { useMenuModal } from "../../contexts/MenuModalContext";
 import Button from "../../UI/Button";
 import { useKeyInput } from "../../contexts/KeyInputContext";
 import { AnimatePresence, motion } from "motion/react";
+import { useEffect } from "react";
 
 function MenuModal() {
   const { openMenuModal, setOpenMenuModal } = useMenuModal();
   const { setKeyInputState } = useKeyInput();
-  // if (!openMenuModal) return null;
+
+  useEffect(() => {
+    function handler(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpenMenuModal((open) => !open);
+      }
+    }
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [setOpenMenuModal]);
 
   return (
     <AnimatePresence mode="popLayout">
