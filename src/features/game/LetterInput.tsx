@@ -32,8 +32,21 @@ function LetterInput({
   >;
 }) {
   function handleClickOnKey() {
+    //// 1) IF WRONG GUESS PLAY WRONG SOUND ELSE PLAY CORRECT SOUND
     const wrongSound = new Audio("/sounds/wrong.mp3");
-    //// 1) REVEAL LETTER
+    const correctSound = new Audio("/sounds/correct.mp3");
+    const wrong =
+      letters?.every(
+        (letter) => letter.letter.toUpperCase() !== keyInputState.key,
+      ) && keyInputState.active;
+
+    if (wrong) {
+      // wrongSound.currentTime = 0;
+      wrongSound.play();
+    } else {
+      correctSound.play();
+    }
+    //// 2) REVEAL LETTER
     setLetters((letters) =>
       letters?.map((letter) =>
         letter.letter.toUpperCase().includes(keyInputState.key)
@@ -42,22 +55,16 @@ function LetterInput({
       ),
     );
 
-    //// 2) DEACTIVATE KEY
+    //// 3) DEACTIVATE KEY
     setKeyInputState((prev) => {
       return prev.map((input) =>
         input.key === keyInputState.key ? { ...input, active: false } : input,
       );
     });
 
-    //// 3) IF WRONG GUESS DECREASE HEALTH BY 1
-    if (
-      letters?.every(
-        (letter) => letter.letter.toUpperCase() !== keyInputState.key,
-      ) &&
-      keyInputState.active
-    ) {
-      //// 4) PLAY SOUNDS
-      wrongSound.play();
+    //// 4) IF WRONG GUESS DECREASE HEALTH BY 1
+
+    if (wrong) {
       setCurrentHealth((prev) => prev - 1);
     }
   }
