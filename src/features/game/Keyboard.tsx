@@ -1,5 +1,5 @@
 import { useKeyInput } from "../../contexts/KeyInputContext";
-import LetterInput from "../../UI/LetterInput";
+import LetterInput from "./LetterInput";
 
 function Keyboard({
   setLetters,

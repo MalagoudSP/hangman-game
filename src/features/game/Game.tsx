@@ -12,7 +12,7 @@ import Letter from "../../UI/Letter";
 import Keyboard from "./Keyboard";
 import { useKeyInput } from "../../contexts/KeyInputContext";
 import ResultModal from "./ResultModal";
-import { motion } from "motion/react";
+import { AnimatePresence } from "motion/react";
 
 function Game() {
   const [searchParams] = useSearchParams();
@@ -108,27 +108,17 @@ function Game() {
   return (
     <>
       <MenuModal />
-      {openWinModal && (
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "keyframes", duration: 0.35 }}
-          exit={{ scale: 0 }}
-        >
+      <AnimatePresence mode="popLayout">
+        {openWinModal && (
           <ResultModal type="win" handleNextWord={handleNextWord} />
-        </motion.div>
-      )}
-      {openLoseModal && (
-        <motion.div
-          initial={{ scale: 0.85 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "keyframes", duration: 0.35 }}
-          exit={{ scale: 0.85 }}
-        >
+        )}
+      </AnimatePresence>
+      <AnimatePresence mode="popLayout">
+        {openLoseModal && (
           <ResultModal type="lose" handleNextWord={handleNextWord} />
-        </motion.div>
-      )}
-      <PageContainer>
+        )}
+      </AnimatePresence>
+      <PageContainer className="h-full">
         <div className="mb-19.5 flex items-center justify-between">
           <GameHeader>{category.replaceAll("_", " ")}</GameHeader>
           <PlayerHealth
@@ -139,7 +129,7 @@ function Game() {
         <div className="flex flex-col gap-29.5">
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
             {letters?.map((letter, i) => (
-              <Letter key={i} letter={letter} />
+              <Letter key={i} letter={letter} index={i} />
             ))}
           </div>
 

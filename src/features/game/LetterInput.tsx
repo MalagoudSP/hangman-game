@@ -32,6 +32,7 @@ function LetterInput({
   >;
 }) {
   function handleClickOnKey() {
+    const wrongSound = new Audio("/sounds/wrong.mp3");
     //// 1) REVEAL LETTER
     setLetters((letters) =>
       letters?.map((letter) =>
@@ -55,6 +56,8 @@ function LetterInput({
       ) &&
       keyInputState.active
     ) {
+      //// 4) PLAY SOUNDS
+      wrongSound.play();
       setCurrentHealth((prev) => prev - 1);
     }
   }
@@ -63,7 +66,7 @@ function LetterInput({
     <p
       role="button"
       onClick={handleClickOnKey}
-      className={`bg-neutral-0 text-preset-10 text-indigo-60 flex h-14 cursor-pointer items-center justify-center rounded-lg md:h-21 md:rounded-3xl md:text-[48px] md:tracking-[2.5px] ${keyInputState.active === false ? "opacity-25" : "opacity-100 active:scale-92"}`}
+      className={`bg-neutral-0 text-preset-10 text-indigo-60 flex h-14 cursor-pointer items-center justify-center rounded-lg transition-opacity duration-200 md:h-21 md:rounded-3xl md:text-[48px] md:tracking-[2.5px] ${keyInputState.active === false ? "opacity-25" : "opacity-100 active:scale-92"}`}
     >
       {keyInputState.key}
     </p>

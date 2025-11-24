@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import Button from "../../UI/Button";
 import { useKeyInput } from "../../contexts/KeyInputContext";
+import { motion } from "motion/react";
 
 function ResultModal({
   type,
@@ -14,7 +15,13 @@ function ResultModal({
   return (
     <>
       <div className="color-gradient-5 fixed inset-0 opacity-75" />
-      <div className="absolute top-1/2 left-1/2 z-9 flex h-dvh -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+      <motion.div
+        initial={{ scale: 0.85, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.2 }}
+        exit={{ scale: 0.85, opacity: 0, transition: { duration: 0.2 } }}
+        className="absolute top-1/2 left-1/2 z-9 flex h-dvh -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+      >
         <div className="relative flex">
           <p
             style={{
@@ -62,7 +69,7 @@ function ResultModal({
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
