@@ -5,7 +5,7 @@ import PlayButton from "../../UI/PlayButton";
 
 function MainMenu() {
   return (
-    <div className="flex h-dvh items-center justify-center">
+    <div className="flex min-h-dvh items-center justify-center">
       <div className="relative">
         <LogoIcon className="absolute -top-14 left-1/2 h-[130.2px] w-[263px] -translate-x-1/2 md:-top-26 md:h-[185px] md:w-[373.69px]" />
         <div
