@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import { useMenuModal } from "../../contexts/MenuModalContext";
 import Button from "../../UI/Button";
 import { useKeyInput } from "../../contexts/KeyInputContext";
+import { motion } from "motion/react";
 
 function MenuModal() {
   const { openMenuModal, setOpenMenuModal } = useMenuModal();
@@ -11,7 +12,13 @@ function MenuModal() {
   return (
     <>
       <div className="color-gradient-5 fixed inset-0 opacity-75" />
-      <div className="absolute top-1/2 left-1/2 z-9 flex h-dvh -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+      <motion.div
+        initial={{ scale: 0.85 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.35 }}
+        exit={{ scale: 0.85 }}
+        className="absolute top-1/2 left-1/2 z-9 flex h-dvh -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+      >
         <div className="relative">
           <p
             style={{
@@ -63,7 +70,7 @@ function MenuModal() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

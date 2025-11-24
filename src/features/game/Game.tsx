@@ -12,6 +12,7 @@ import Letter from "../../UI/Letter";
 import Keyboard from "./Keyboard";
 import { useKeyInput } from "../../contexts/KeyInputContext";
 import ResultModal from "./ResultModal";
+import { motion } from "motion/react";
 
 function Game() {
   const [searchParams] = useSearchParams();
@@ -108,10 +109,24 @@ function Game() {
     <>
       <MenuModal />
       {openWinModal && (
-        <ResultModal type="win" handleNextWord={handleNextWord} />
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "keyframes", duration: 0.35 }}
+          exit={{ scale: 0 }}
+        >
+          <ResultModal type="win" handleNextWord={handleNextWord} />
+        </motion.div>
       )}
       {openLoseModal && (
-        <ResultModal type="lose" handleNextWord={handleNextWord} />
+        <motion.div
+          initial={{ scale: 0.85 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "keyframes", duration: 0.35 }}
+          exit={{ scale: 0.85 }}
+        >
+          <ResultModal type="lose" handleNextWord={handleNextWord} />
+        </motion.div>
       )}
       <PageContainer>
         <div className="mb-19.5 flex items-center justify-between">

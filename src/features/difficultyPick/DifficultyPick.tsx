@@ -2,6 +2,7 @@ import { NavLink, useSearchParams } from "react-router";
 import Header from "../../UI/Header";
 import PageContainer from "../../UI/PageContainer";
 import DifficultyItem from "../../UI/CategoryItem";
+import { motion } from "motion/react";
 
 const difficulty = ["easy", "medium", "hard"];
 
@@ -17,7 +18,13 @@ function DifficultyPick() {
             key={i}
             to={`/game?category=${category}&difficulty=${difficulty}`}
           >
-            <DifficultyItem>{difficulty}</DifficultyItem>
+            <motion.div
+              initial={{ y: -500 }}
+              animate={{ y: 0 }}
+              transition={{ duration: i * 0.3 }}
+            >
+              <DifficultyItem>{difficulty}</DifficultyItem>
+            </motion.div>
           </NavLink>
         ))}
       </div>
