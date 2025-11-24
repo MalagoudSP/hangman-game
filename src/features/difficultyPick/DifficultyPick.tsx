@@ -12,7 +12,7 @@ function DifficultyPick() {
   return (
     <PageContainer>
       <Header type="difficulty">Pick Difficulty</Header>
-      <div className="mt-25 grid gap-4 md:mt-28.5 md:grid-cols-2 md:gap-8 lg:mt-40 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12.5">
+      <div className="mt-25 grid gap-4 md:mt-28.5 md:grid-cols-3 md:gap-8 lg:mt-40 lg:gap-x-8 lg:gap-y-12.5">
         {difficulty.map((difficulty, i) => (
           <NavLink
             key={i}
