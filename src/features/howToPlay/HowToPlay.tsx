@@ -6,7 +6,7 @@ function HowToPlay() {
     <PageContainer>
       <Header>How to Play</Header>
       <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:gap-8">
-        <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15">
+        <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15 [@media(min-height:0px)_and_(max-height:615px)]:py-6">
           <p className="text-preset-4 hidden text-blue-600 md:block">01</p>
           <div className="flex items-center gap-4 md:flex-col md:items-start lg:items-center lg:gap-10 lg:text-center">
             <p className="text-preset-10 text-blue-600 md:hidden">01</p>
@@ -26,7 +26,7 @@ function HowToPlay() {
             blanks for each letter of the word.
           </p>
         </div>
-        <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15">
+        <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15 [@media(min-height:0px)_and_(max-height:615px)]:py-6">
           <p className="text-preset-4 hidden text-blue-600 md:block">02</p>
           <div className="flex items-center gap-4 md:flex-col md:items-start lg:items-center lg:gap-10 lg:text-center">
             <p className="text-preset-10 text-blue-600 md:hidden">02</p>
@@ -46,7 +46,7 @@ function HowToPlay() {
             health, which empties after eight incorrect guesses.
           </p>
         </div>
-        <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15">
+        <div className="bg-neutral-0 flex flex-col gap-4 rounded-[20px] p-8 px-10 md:flex-row md:items-center md:gap-10 md:rounded-[40px] lg:flex-col lg:px-12 lg:py-15 [@media(min-height:0px)_and_(max-height:615px)]:py-6">
           <p className="text-preset-4 hidden text-blue-600 md:block">03</p>
           <div className="flex items-center gap-4 md:flex-col md:items-start lg:items-center lg:gap-10 lg:text-center">
             <p className="text-preset-10 text-blue-600 md:hidden">03</p>
