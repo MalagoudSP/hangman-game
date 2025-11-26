@@ -1,16 +1,4 @@
-# Frontend Mentor - Hangman game solution
-
-This is a solution to the [Hangman game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/hangman-game-rsQiSVLGWn). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+# Hangman game 
 
 ## Overview
 
@@ -35,12 +23,8 @@ Users should be able to:
 ![tablet](./assets/images/sc-tablet.png)
 ![mobile](./assets/images/sc-mobile.png)
 
-### Links
 
-- Solution URL: [Github](https://github.com/maziarja/hangman-game)
-- Live Site URL: [Live site](https://hangman-game-two-chi.vercel.app)
-
-## My process
+- Live Site URL: [Live site]
 
 ### Built with
 
@@ -52,9 +36,4 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
 
-## Author
 
-- Frontend Mentor - [@maziarja](https://www.frontendmentor.io/profile/maziarja)
-- Twitter - [@maz_alem](https://x.com/maz_alem)
-- LinkedIn - [@maziar-jamalialem](https://www.linkedin.com/in/maziar-jamalialem-677030345/)
-- Instagram - [@mazja_dev](https://www.instagram.com/mazja_dev/)
