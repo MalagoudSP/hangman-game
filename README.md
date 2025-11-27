@@ -23,8 +23,7 @@ Users should be able to:
 ![tablet](./assets/images/sc-tablet.png)
 ![mobile](./assets/images/sc-mobile.png)
 
-
-- Live Site URL: [Live site]
+- Live Site URL: [Live site](hangman-game-two-chi.vercel.app)
 
 ### Built with
 
