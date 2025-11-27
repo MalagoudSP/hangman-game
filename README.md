@@ -17,7 +17,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page.
 - Navigate the entire game only using their keyboard.
 
- ## Live Site URL: [Hangman game](hangman-game-two-chi.vercel.app)
+#### Live Site URL: [Hangman game](hangman-game-two-chi.vercel.app)
 
 ### Built with
 
